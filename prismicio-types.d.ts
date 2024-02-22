@@ -855,6 +855,33 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for Resume Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ResumeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Resume*
+ */
+type ResumeSliceVariation = ResumeSliceDefault;
+
+/**
+ * Resume Shared Slice
+ *
+ * - **API ID**: `resume`
+ * - **Description**: Resume
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ResumeSlice = prismic.SharedSlice<"resume", ResumeSliceVariation>;
+
+/**
  * Primary content in *TechList → Primary*
  */
 export interface TechListSliceDefaultPrimary {
@@ -1016,6 +1043,9 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
+      ResumeSlice,
+      ResumeSliceVariation,
+      ResumeSliceDefault,
       TechListSlice,
       TechListSliceDefaultPrimary,
       TechListSliceDefaultItem,
