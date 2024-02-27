@@ -3,7 +3,7 @@ import { Html, PresentationControls, Environment, useGLTF, Float, ContactShadows
 
 export default function Ordi() {
 
-    const computer = useGLTF('/model.gltf')
+    const computer = useGLTF('./model.gltf')
     return <>
 
         <Environment preset="city" />
@@ -21,9 +21,9 @@ export default function Ordi() {
                 <primitive
                     object={computer.scene}
                     position-y={-1.2}
-                   >
+                >
                     <Html />
-                    </primitive>
+                </primitive>
 
             </Float>
 
