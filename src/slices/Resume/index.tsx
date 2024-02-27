@@ -20,7 +20,7 @@ const Resume = ({ slice }: ResumeProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid  items-center aspect-square">
+      <div className="grid  items-center aspect-square z-100">
         <Canvas
           className="r3f"
           camera={{

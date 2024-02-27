@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f6f6f6;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1300px;
+    background-color: #fff;
+    margin: 0px;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(45deg, #ff6f00, #edc900);
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.top h2 {
+    font-size: 2.5em;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+}
+
+.top h2 span {
+    color: #efdb00;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
+.group {
+    position: relative;
+    display: grid;
+    gap: 40px;
+    width: 100%;
+    grid-template-columns: 2fr 3fr;
+    margin-top: 20px;
+}
+
+
+.imgBox {
+    position: relative;
+    width: 100%;
+}
+
+.imgBox img {
+    width: 100%;
+}
+
+.group p {
+    color: #fff;
+    font-size: 1em;
+}
+
+
+.bottom {
+    position: relative;
+    display: grid;
+    margin: 50px 50px 0;
+    gap: 40px;
+    grid-template-columns: 2fr 3fr;
+}
+
+.bottom h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #fff;
+    background: #ff6f00;
+    font-weight: 600;
+    padding: 0 15px;
+    margin-top: 20px;
+    display: inline-flex;
+}
+
+.contactInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.contactInfo li a {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.contactInfo li a {
+    text-decoration: none;
+    color: #555;
+}
+
+.contactInfo li a .icon {
+    color: #ff6f00;
+}
+
+.contactInfo li a .text {
+    color: #555;
+}
+
+.leftside {
+    width: 50%;
+}
+
+.skills {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.skills .skillsBox {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 3fr;
+}
+
+.skills .skillsBox p {
+    color: #555;
+}
+
+.skills .skillsBox .value {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #eee;
+}
+
+.skills .skillsBox .value::before {
+    content: '';
+    position: absolute;
+    width: var(--i);
+    height: 100%;
+    background: rgb(255, 111, 0);
+}
+
+.projects {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.projects ul {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.projects ul li {
+    list-style: none;
+    width: calc(100% / 4);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #F3F3F3;
+    cursor: pointer;
+}
+
+.projects ul li a {
+    text-decoration-line: none;
+    color: #333
+}
+
+.projects ul li:hover {
+    background: #ff6f00;
+    ;
+}
+
+.projects ul li:hover a {
+    color: #FFF;
+}
+
+
+.adjustMargin {
+    margin-top: -100px;
+}
+
+.edu-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+}
+
+.edu-groupBx {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.edu-groupBx p:nth-child(1) {
+    font-weight: 400;
+}
+
+.edu-groupBx b {
+    font-weight: 600;
+    color: #ff6f00;
+}
+
+.edu-groupBx b span {
+    position: relative;
+    top: -4px;
+    font-size: 0.8em;
+    color: #666
+}
+
+.hobbies {
+    margin: 0 50px 50px;
+}
+
+.hobbies h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #fff;
+    background: #ff6f00;
+    font-weight: 600;
+    padding: 0 15px;
+    margin-top: 20px;
+    display: inline-flex;
+}
+
+.hobbies ul {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.hobbies ul li {
+    list-style: none;
+    color: #333;
+    width: calc(100% / 4);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #F3F3F3;
+    cursor: pointer;
+}
+
+.hobbies ul li:hover {
+    background: #ff6f00;
+    color: #FFF;
+}
+
+.hobbies ul li i {
+    font-size: 2em;
+}

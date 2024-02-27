@@ -82,7 +82,7 @@ const Hero3D = ({ slice }: Hero3DProps): JSX.Element => {
       data-slice-variation={slice.variation}
       ref={component}
     >
-      <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2">
+      <div className="grid min-h-[50vh] grid-cols-1 md:grid-cols-2">
         <Shapes />
 
         <div className="col-start-1 md:row-start-1">
