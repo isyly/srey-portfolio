@@ -9,8 +9,6 @@ import { gsap } from "gsap"
 
 
 export default function Shapes() {
-    const computer = useGLTF('/model.gltf')
-    console.log(computer)
 
 
     return (
