@@ -3,7 +3,7 @@ import { Html, PresentationControls, Environment, useGLTF, Float, ContactShadows
 
 export default function Ordi() {
 
-    const computer = useGLTF('./model.gltf')
+    const computer = useGLTF('/model/model.gltf')
     return <>
 
         <Environment preset="city" />
