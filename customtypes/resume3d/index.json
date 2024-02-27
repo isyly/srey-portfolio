@@ -1,35 +1,17 @@
 {
-  "id": "page",
-  "label": "page",
+  "id": "resume3d",
+  "label": "Resume3D",
   "format": "page",
-  "repeatable": true,
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "config": {
-          "label": "UID"
-        },
-        "type": "UID"
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
             "resume": {
-              "type": "SharedSlice"
-            },
-            "experience": {
-              "type": "SharedSlice"
-            },
-            "content_index": {
-              "type": "SharedSlice"
-            },
-            "tech_list": {
-              "type": "SharedSlice"
-            },
-            "biography": {
               "type": "SharedSlice"
             }
           }

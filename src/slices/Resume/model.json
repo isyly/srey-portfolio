@@ -6,11 +6,28 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "monCV",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "cv_srey": {
+          "type": "Text",
+          "config": {
+            "label": "CV SREY",
+            "placeholder": ""
+          }
+        },
+        "annee": {
+          "type": "Text",
+          "config": {
+            "label": "annee",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

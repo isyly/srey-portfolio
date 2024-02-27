@@ -1,5 +1,10 @@
+"use client";
+import Bounded from "@/components/Bounded";
+import { Canvas } from "@react-three/fiber";
+import Ordi from "./Ordi.jsx";
+
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, usePrismicClient } from "@prismicio/react";
 
 /**
  * Props for `Resume`.
@@ -15,7 +20,19 @@ const Resume = ({ slice }: ResumeProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for resume (variation: {slice.variation}) Slices
+      <div className="grid  items-center aspect-square">
+        <Canvas
+          className="r3f"
+          camera={{
+            fov: 45,
+            near: 0.1,
+            far: 10,
+            position: [-1, +0.9, 5],
+          }}
+        >
+          <Ordi />
+        </Canvas>
+      </div>
     </section>
   );
 };

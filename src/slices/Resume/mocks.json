@@ -2,7 +2,18 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"cv_srey": {
+				"__TYPE__": "FieldContent",
+				"value": "use",
+				"type": "Text"
+			},
+			"annee": {
+				"__TYPE__": "FieldContent",
+				"value": "slipped",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

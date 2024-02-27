@@ -164,6 +164,7 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | ResumeSlice
   | ExperienceSlice
   | ContentIndexSlice
   | TechListSlice
@@ -326,6 +327,71 @@ export type ProjectDocument<Lang extends string = string> =
     Lang
   >;
 
+type Resume3dDocumentDataSlicesSlice = ResumeSlice;
+
+/**
+ * Content for Resume3D documents
+ */
+interface Resume3dDocumentData {
+  /**
+   * Slice Zone field in *Resume3D*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume3d.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<Resume3dDocumentDataSlicesSlice> /**
+   * Meta Title field in *Resume3D*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: resume3d.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Resume3D*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: resume3d.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Resume3D*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume3d.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Resume3D document from Prismic
+ *
+ * - **API ID**: `resume3d`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type Resume3dDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<Resume3dDocumentData>,
+    "resume3d",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Nav Item*
  */
@@ -485,6 +551,7 @@ export type AllDocumentTypes =
   | HomeDocument
   | PageDocument
   | ProjectDocument
+  | Resume3dDocument
   | SettingsDocument;
 
 /**
@@ -855,7 +922,32 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for Resume Slice
+ * Primary content in *Resume → Primary*
+ */
+export interface ResumeSliceDefaultPrimary {
+  /**
+   * CV SREY field in *Resume → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.primary.cv_srey
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cv_srey: prismic.KeyTextField;
+
+  /**
+   * annee field in *Resume → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.primary.annee
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  annee: prismic.KeyTextField;
+}
+
+/**
+ * monCV variation for Resume Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -863,7 +955,7 @@ export type ImageBlockSlice = prismic.SharedSlice<
  */
 export type ResumeSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ResumeSliceDefaultPrimary>,
   never
 >;
 
@@ -1018,6 +1110,9 @@ declare module "@prismicio/client" {
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataSlicesSlice,
+      Resume3dDocument,
+      Resume3dDocumentData,
+      Resume3dDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavItemItem,
@@ -1044,6 +1139,7 @@ declare module "@prismicio/client" {
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
       ResumeSlice,
+      ResumeSliceDefaultPrimary,
       ResumeSliceVariation,
       ResumeSliceDefault,
       TechListSlice,
