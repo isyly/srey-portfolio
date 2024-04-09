@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
-
+    z-index: -20;
 }
 
 body {
@@ -100,14 +100,18 @@ body {
     margin: 20px 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .contactInfo li a {
-    list-style: none;
+    list-style: none !important;
     display: flex;
     gap: 15px;
 }
 
 .contactInfo li a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #555;
 }
 

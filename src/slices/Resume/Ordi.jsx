@@ -1,5 +1,9 @@
 "use client"
-import { Html, PresentationControls, Environment, useGLTF, Float, ContactShadows } from '@react-three/drei'
+import { extend } from '@react-three/fiber'
+import { easing, geometry } from 'maath'
+
+import { Html, Image, PresentationControls, Environment, useGLTF, Float, ContactShadows } from '@react-three/drei'
+extend({ RoundedPlaneGeometry: geometry.RoundedPlaneGeometry })
 
 export default function Ordi() {
 
@@ -27,6 +31,7 @@ export default function Ordi() {
                     position={[0, 0.55, -1.15]}
                 />
 
+                {/* computer */}
                 <primitive
                     object={computer.scene}
                     position-y={-1.2}
@@ -38,10 +43,11 @@ export default function Ordi() {
                         distanceFactor={1.17}
                         position={[0, 1.56, -1.4]}
                         rotation-x={-0.256}
-                    ><iframe src="/resumeWebsite/index.html" />
+                        zIndexRange={[100, 0]}
+                    >
+                        <iframe src="/resumeWebsite/index.html" />
                     </Html>
                 </primitive>
-
             </Float>
 
         </PresentationControls>
