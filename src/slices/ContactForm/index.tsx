@@ -7,6 +7,7 @@ import { Content } from "@prismicio/client";
 import { MdArrowOutward } from "react-icons/md";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Button from "@/components/Button";
+import Shapes from "@/Slices/Hero3D/Shapes";
 
 /*** Props for `ContactForm`.
  */
@@ -17,7 +18,7 @@ export type ContactFormProps = SliceComponentProps<Content.ContactFormSlice>;
  */
 
 const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -69,55 +70,55 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {/* <motion.div className="flex-[0.75] bg-black-100 p-8 rounded-2xl"></motion.div> */}
-      <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-        <h3>
-          <PrismicRichText field={slice.primary.Title} />
-        </h3>
+      <h3 className="mb-8 text-[clamp(1.2rem,13vmin,13rem)] font-extrabold leading-none tracking-tighter">
+        <PrismicRichText field={slice.primary.Title} />
+      </h3>
+      <div className="grid min-h-[50vh] grid-cols-1 md:grid-cols-2">
+        <Shapes />
+        {/* <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden"> */}
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className=" mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            {" "}
-            <span className="text-white font-medium mb-4">Your name</span>
+            <span className="text-white font-medium mb-4">Votre Nom</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your name"
+              placeholder="Comment vous appelez-vous ?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none
      border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            {" "}
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-white font-medium mb-4">
+              Votre courrier électronique
+            </span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your email"
+              placeholder="Quel est votre email ?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none
      border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            {" "}
-            <span className="text-white font-medium mb-4">Your message</span>
+            <span className="text-white font-medium mb-4">Votre message</span>
             <textarea
-              rows="7"
+              rows={parseInt("7")}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What do you want to say?"
+              placeholder="Qu'avez-vous à me dire ?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none
-     border-none font-medium"
+           border-none font-medium"
             />
           </label>
           <button
@@ -126,15 +127,12 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           >
             <span className="absolute inset-0 z-0 h-full translate-y-9 bg-yellow-300 transition-transform  duration-300 ease-in-out group-hover:translate-y-0" />
             <span className="relative flex items-center justify-center gap-2">
-              {loading ? "Sending…" : "Send"}{" "}
+              {loading ? "Envoi en cours" : "Envoie"}{" "}
               {<MdArrowOutward className="inline-block" />}
             </span>
           </button>
         </form>
-        {/* </motion.div> */}
-        {/* <motion.div className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"> */}
-        {/* <EarthCanvas /> */}
-        {/* </motion.div> */}
+        {/* </div> */}
       </div>
     </Bounded>
   );
