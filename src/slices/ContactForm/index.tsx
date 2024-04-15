@@ -6,7 +6,7 @@ import { Content } from "@prismicio/client";
 import { MdArrowOutward } from "react-icons/md";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Button from "@/components/Button";
-import Shapes from "@/Slices/Hero3D/Shapes";
+import Shapes from "@/slices/Hero3D/Shapes";
 
 /*** Props for `ContactForm`.
  */
