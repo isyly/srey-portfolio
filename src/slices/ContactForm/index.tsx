@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
 import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
 import { MdArrowOutward } from "react-icons/md";
