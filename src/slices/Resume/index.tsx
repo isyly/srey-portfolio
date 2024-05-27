@@ -35,7 +35,7 @@ const Resume = ({ slice }: ResumeProps): JSX.Element => {
           </Canvas>
         </div>
         <div className="justify-center">
-          <a href="/CV VINCENT DUPUIS.pdf" download="srey.pdf">
+          <a href="/CvSylvainRey2024.pdf" download="CvSylvainRey2024.pdf">
             <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
               <svg
                 className="fill-current w-4 h-4 mr-2"
