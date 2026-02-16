@@ -45,7 +45,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           to_email: "sylvain.rey.75@gmail.com",
           message: form.message,
         },
-        "GwsxXHNqc6bj7ak2N"
+        "Q1LOPK4X5PH8bZ5Nh"
       )
       .then(
         () => {
